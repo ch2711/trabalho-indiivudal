@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Botão Fugitivo</title>
+    <style>
+        #fugitiveButton {
+            position: absolute;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <button id="fugitiveButton">Clique em mim!</button>
+
+    <script>
+        const button = document.getElementById('fugitiveButton');
+
+        button.addEventListener('mouseover', () => {
+            const x = Math.random() * (window.innerWidth - button.offsetWidth);
+            const y = Math.random() * (window.innerHeight - button.offsetHeight);
+
+            button.style.left = `${x}px`;
+            button.style.top = `${y}px`;
+        });
+    </script>
+</body>
+</html>

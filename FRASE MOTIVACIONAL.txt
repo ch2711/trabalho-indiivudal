@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frase Motivacional</title>
+</head>
+<body>
+    <h1>Frase Motivacional do Dia</h1>
+    <p id="motivational-phrase"></p>
+    <button onclick="displayMotivationalPhrase()">Mostrar Outra Frase</button>
+
+    <script>
+        function getMotivationalPhrase() {
+            const phrases = [
+                "Acredite em si mesmo e todo o resto se encaixará.",
+                "A persistência é o caminho do êxito.",
+                "Não importa o quão devagar você vá, desde que você não pare.",
+                "Grandes coisas nunca vêm de zonas de conforto.",
+                "O sucesso é a soma de pequenos esforços repetidos dia após dia.",
+                "Acredite que você pode e você já está no meio do caminho.",
+                "O único lugar onde o sucesso vem antes do trabalho é no dicionário.",
+                "Você é mais forte do que imagina. Acredite."
+            ];
+
+            const randomIndex = Math.floor(Math.random() * phrases.length);
+            return phrases[randomIndex];
+        }
+
+        function displayMotivationalPhrase() {
+            const phrase = getMotivationalPhrase();
+            document.getElementById("motivational-phrase").textContent = phrase;
+        }
+
+        window.onload = displayMotivationalPhrase;
+    </script>
+</body>
+</html>
